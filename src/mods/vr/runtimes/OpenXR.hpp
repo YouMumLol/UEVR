@@ -422,6 +422,7 @@ public:
     struct InteractionBinding {
         std::string interaction_path_name{};
         std::string action_name{};
+        std::string steam_frame_action_name{};
     };
 
     struct ActionVectorAssociation {
@@ -442,14 +443,14 @@ public:
         {"/user/hand/left/input/x/click", "abuttonleft"}, // oculus?
         {"/user/hand/left/input/x/touch", "abuttontouchleft"}, // oculus?
 
-        {"/user/hand/right/input/x/click", "abuttonright"}, // oculus?
-        {"/user/hand/right/input/x/touch", "abuttontouchright"}, // oculus?
+        {"/user/hand/right/input/x/click", "abuttonright", "bbuttonright"}, // Oculus / Steam Frame
+        {"/user/hand/right/input/x/touch", "abuttontouchright", "bbuttontouchright"}, // Oculus / Steam Frame
 
         {"/user/hand/left/input/y/click", "bbuttonleft"}, // oculus?
         {"/user/hand/left/input/y/touch", "bbuttontouchleft"}, // oculus?
 
-        {"/user/hand/right/input/y/click", "bbuttonright"}, // oculus?
-        {"/user/hand/right/input/y/touch", "bbuttontouchright"}, // oculus?
+        {"/user/hand/right/input/y/click", "bbuttonright", "bbuttonleft"}, // Oculus / Steam Frame
+        {"/user/hand/right/input/y/touch", "bbuttontouchright", "bbuttontouchleft"}, // Oculus / Steam Frame
 
         {"/user/hand/left/input/a/click", "abuttonleft"}, // oculus?
         {"/user/hand/left/input/a/touch", "abuttontouchleft"}, // oculus?
@@ -460,8 +461,8 @@ public:
         {"/user/hand/left/input/b/click", "bbuttonleft"}, // oculus?
         {"/user/hand/left/input/b/touch", "bbuttontouchleft"}, // oculus?
 
-        {"/user/hand/right/input/b/click", "bbuttonright"}, // oculus?
-        {"/user/hand/right/input/b/touch", "bbuttontouchright"}, // oculus?
+        {"/user/hand/right/input/b/click", "bbuttonright", "abuttonleft"}, // Oculus / Steam Frame
+        {"/user/hand/right/input/b/touch", "bbuttontouchright", "abuttontouchleft"}, // Oculus / Steam Frame
 
         {"/user/hand/*/input/thumbstick", "joystick"}, // oculus?
         {"/user/hand/*/input/thumbstick/click", "joystickclick"}, // oculus?

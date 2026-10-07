@@ -971,7 +971,7 @@ std::optional<std::string> OpenXR::initialize_actions(const std::string& json_st
 
         // Suggest bindings
         for (const auto& map_it : OpenXR::s_bindings_map) {
-            if (map_it.action_name != action_name) {
+            if (map_it.action_name != action_name && map_it.steam_frame_action_name != action_name) {
                 continue;
             }
 
@@ -1016,11 +1016,18 @@ std::optional<std::string> OpenXR::initialize_actions(const std::string& json_st
                     continue;
                 }
 
-                if (this->action_set.action_map.contains(map_it.action_name)) {
-                    for (const auto& controller : s_supported_controllers) {
-                        if (attempt_add_binding(controller, { this->action_set.action_map[map_it.action_name], p })) {
-                            this->hands[index].profiles[controller].path_map[map_it.action_name] = p;
-                        }
+                for (const auto& controller : s_supported_controllers) {
+                    const auto& mapped_action_name = controller == "/interaction_profiles/valve/frame_controller_valve" &&
+                                                             !map_it.steam_frame_action_name.empty()
+                                                         ? map_it.steam_frame_action_name
+                                                         : map_it.action_name;
+
+                    if (mapped_action_name != action_name) {
+                        continue;
+                    }
+
+                    if (attempt_add_binding(controller, {xr_action, p})) {
+                        this->hands[index].profiles[controller].path_map[mapped_action_name] = p;
                     }
                 }
 
