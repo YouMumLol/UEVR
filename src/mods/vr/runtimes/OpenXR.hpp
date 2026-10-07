@@ -435,7 +435,9 @@ public:
         {"/user/hand/*/input/aim/pose", "pose"},
         {"/user/hand/*/input/grip/pose", "grippose"},
         {"/user/hand/*/input/trigger", "trigger"}, // oculus?
+        {"/user/hand/*/input/trigger/click", "trigger"}, // Steam Frame
         {"/user/hand/*/input/squeeze", "grip"}, // oculus/vive/index
+        {"/user/hand/*/input/squeeze/click", "grip"}, // Steam Frame
 
         {"/user/hand/left/input/x/click", "abuttonleft"}, // oculus?
         {"/user/hand/left/input/x/touch", "abuttontouchleft"}, // oculus?
@@ -465,6 +467,14 @@ public:
         {"/user/hand/*/input/thumbstick/click", "joystickclick"}, // oculus?
         {"/user/hand/*/input/system/click", "systembutton"}, // oculus/vive/index
         {"/user/hand/*/input/menu/click", "systembutton"}, // oculus/vive/index
+        {"/user/hand/left/input/view/click", "systembutton"}, // Steam Frame
+
+        {"/user/hand/left/input/dpad_up/click", "dpad_up"}, // Steam Frame
+        {"/user/hand/left/input/dpad_right/click", "dpad_right"}, // Steam Frame
+        {"/user/hand/left/input/dpad_down/click", "dpad_down"}, // Steam Frame
+        {"/user/hand/left/input/dpad_left/click", "dpad_left"}, // Steam Frame
+
+        {"/user/hand/*/input/bumper/click", "grip"}, // Steam Frame
 
         {"/user/hand/left/input/thumbrest/touch", "thumbresttouchleft"}, // cv1/quest pro
         {"/user/hand/right/input/thumbrest/touch", "thumbresttouchright"}, // cv1/quest pro
@@ -494,6 +504,7 @@ public:
         "/interaction_profiles/oculus/touch_controller",
         "/interaction_profiles/oculus/go_controller",
         "/interaction_profiles/valve/index_controller",
+        "/interaction_profiles/valve/frame_controller_valve",
         "/interaction_profiles/microsoft/motion_controller",
         "/interaction_profiles/htc/vive_controller",
     };

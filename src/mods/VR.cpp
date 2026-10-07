@@ -299,7 +299,8 @@ std::optional<std::string> VR::initialize_openxr() {
 
                 const std::unordered_set<std::string> wanted_extensions {
                     XR_KHR_COMPOSITION_LAYER_DEPTH_EXTENSION_NAME,
-                    XR_KHR_COMPOSITION_LAYER_CYLINDER_EXTENSION_NAME
+                    XR_KHR_COMPOSITION_LAYER_CYLINDER_EXTENSION_NAME,
+                    "XR_VALVE_frame_controller_interaction"
                     // To be seen if we need more!
                 };
 
